@@ -16,14 +16,14 @@ const reducer = (state, action) => {
       const updatedExpenses = state.expenses.filter(
         (expense) => expense.id !== action.payload
       );
+      return {
+        ...state,
+        expenses: updatedExpenses,
+      };
     case 'SET_BUDGET':
       return {
         ...state,
         budget: action.payload,
-      };
-      return {
-        ...state,
-        expenses: updatedExpenses,
       };
     default:
       return state;
